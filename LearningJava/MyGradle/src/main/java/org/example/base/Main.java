@@ -1,10 +1,8 @@
-package org.example;
+package org.example.base;
 
 import org.example.person.Person;
 import org.example.person.PersonDto;
-import org.example.person.PersonMapStruct;
 
-// PersonDto -> Person 으로 변환해라 ( 필드 이름이 조금 다를 수 있음 )
 public class Main {
     public static void main(String[] args) {
         // PersonDto to Person
@@ -16,7 +14,7 @@ public class Main {
         personDto.setPhone("123-456-7890");
         personDto.setGender("Male");
         personDto.setNationality("American");
-        personDto.setEducation("Bachelor's Degree2");
+        personDto.setEducation("Bachelor's Degree");
 
         System.out.println(personDto);
 
@@ -24,8 +22,5 @@ public class Main {
         person.setFullName(personDto.getName());
         person.setYears(personDto.getAge());
         System.out.println(person);
-
-        Person person2 = PersonMapStruct.INSTANCE.personDtoToPerson(personDto);
-        System.out.println("person2: " + person2);
     }
 }
